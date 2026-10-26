@@ -6,7 +6,7 @@
 
 ## Einstieg
 
-1. Dieses Repository als Teamvorlage übernehmen und in VS Code oder einer kompatiblen Arbeitsumgebung öffnen.
+1. Dieses Repository als Teamvorlage übernehmen und in IntelliJ, VS Code oder einer kompatiblen Arbeitsumgebung öffnen.
 2. Aktuelle Aufgaben und KI-Freigaben prüfen. Die drei möglichen Fallstudien (Fundbüro, Verleihplattform, Repair-Café) sind **Beispiele**, keine festgelegten Anforderungen.
 3. Eigene Personas, Ziele, Szenarien und weitere Artefakte in [`docs/`](docs/README.md) speichern.
 4. Erst nach Freigabe einen passenden Skill aufrufen. Bei Codeaufträgen die konkrete Story und Akzeptanzkriterien nennen.
