@@ -7,20 +7,64 @@ KI erstellt und dient nur als Stellvertreter einer eigenen Erstfassung.
 
 ## Vorbereitung und Ablauf
 
-1. Vom Repository-Root aus die drei unten benannten Quellen und die
-   [künstliche Erstfassung](../artefakte/requirements-erstfassung.md) als Kontext
-   bereitstellen. Zunächst keine weiteren Fachartefakte und keine studentischen
-   Skills laden.
-2. Ein abgegrenztes Copilot-Demogespräch verwenden. Es geht um eine ausdrücklich
-   angeforderte künstliche Vorführung, nicht um einen Wechsel dieser Engineering-
-   Sitzung in den studentischen Betrieb. Keine Instruktionsdateien ändern.
-   Wirksame Instruktionen, Copilot-Modus/Modell und Kontextdateien notieren;
-   Instruktionskonflikte als Beobachtung dokumentieren, nicht durch Umgehen lösen.
-3. Erstfassung vor dem Review zeigen. Challenge-Freigabe durch die vorführende
+1. Vom Repository-Root aus einen neuen Challenge-Ordner außerhalb des Repositories
+   erzeugen (Python 3, nur Standardbibliothek; der Elternordner muss existieren):
+
+   ```sh
+   python3 scripts/prepare_challenge_workspace.py /tmp/swe1-challenge-ap2b
+   code --new-window /tmp/swe1-challenge-ap2b
+   ```
+
+   Der Ausgabeordner darf noch nicht existieren; bei Wiederholung einen neuen
+   Namen wählen. Das Skript verändert das Quellrepository nicht und kopiert über
+   eine feste Positivliste genau sieben Dateien: PV-01, P01, S01, die
+   [künstliche Erstfassung](../artefakte/requirements-erstfassung.md), `AGENTS.md`,
+   `.github/copilot-instructions.md` und
+   `.agents/skills/requirements-coach/SKILL.md`. Der aktuelle Skill benötigt keine
+   zusätzlichen lokalen Ressourcen. Relative Pfade bleiben erhalten. Es werden
+   keine Symlinks, Git-Metadaten, Entscheidungen, Demo-Regie, anderen Skills,
+   Codebeispiele, `.idea/` oder `AGENTS.override.md` übernommen.
+   Als achte Datei wird `docs/SEMESTERREGELN.md` ausschließlich als Demo-Hinweis
+   erzeugt: Die bestehende konservative Vorlage ist keine aktuelle WS-2026/27-
+   Freigabe und wird nicht kopiert. Auch der erzeugte Hinweis erteilt keine Freigabe.
+2. VS Code für diesen Test ausschließlich mit dem erzeugten Ordner öffnen;
+   kein Multi-Root-Workspace, keine zusätzlichen Ordner, keine offenen Dateien aus
+   dem vollständigen Repository und keine angehängten früheren Chats verwenden.
+   Einen neuen Copilot-Chat ohne vorherigen Gesprächskontext starten. Diese
+   Regieanleitung bleibt außerhalb des Copilot-Kontexts; nur den Challenge-Prompt
+   unten manuell übertragen. Es geht um eine künstliche Vorführung, nicht um einen
+   Wechsel dieser Engineering-Sitzung in den studentischen Betrieb.
+3. Den `requirements-coach` ausdrücklich aus dem kopierten `SKILL.md` aktivieren.
+   Vor der ersten Fachfrage anhand der verfügbaren Skill-/Kontextanzeige und
+   Werkzeugprotokolle kontrollieren, ob dieser Skill tatsächlich geladen wurde;
+   eine bloße Selbstauskunft des Modells genügt nicht als Nachweis. Fehlt ein
+   beobachtbarer Ladebeleg, die Aktivierung als unbestätigt protokollieren und
+   keinen erfolgreichen Skill-Test behaupten. Keine anderen Skills aktivieren.
+   Datei- und Skill-Lesewerkzeuge verfügbar lassen; ihre tatsächliche Nutzung
+   gehört zum Test. Schreibumfang ist **null**: keine Dateiänderungen, auch keine
+   Reflexionsdatei, keine Terminalbefehle zur Änderung und keine automatischen
+   Schreibfreigaben. Ein erforderliches Protokoll führt die vorführende Person
+   außerhalb des Challenge-Ordners und außerhalb des Copilot-Kontexts.
+4. Erstfassung vor dem Review zeigen. Challenge-Freigabe durch die vorführende
    Person ausdrücklich aussprechen; Compare erst nach Abschluss der Challenge
    gesondert freigeben. Ein Vorlagentext in einer Datei allein ist keine Freigabe.
-4. Erst nach Compare menschlich reflektieren und entscheiden. Erstfassung und
+   Die Freigabe benennt die künstliche, mit KI erstellte Stellvertreter-Erstfassung
+   ausdrücklich; sie ersetzt keine aktuellen Kursregeln oder Freigabe realer
+   studentischer Arbeiten. Ungeklärte Regelkonflikte vor der Durchführung klären.
+5. Erst nach Compare menschlich reflektieren und entscheiden. Erstfassung und
    Quellen nicht überschreiben; Ergebnisse getrennt nach Status protokollieren.
+
+**Laufzeitprotokoll:** Datum, Repository-Commit und uncommittierten Diff-Stand,
+Ausgabeordner/Dateiliste, VS-Code- und Copilot-Erweiterungsversion, Modell,
+Agentmodus, verfügbare Werkzeuge und deren Berechtigungen erfassen. Geladene
+Instruktionen und Skills mit Herkunft protokollieren, einschließlich sichtbarer
+persönlicher/globaler Instruktionen oder weiterer Kontextanbieter. Je beobachtetem
+Dateizugriff Werkzeug, Pfad und Ergebnis notieren; nicht sichtbare Zugriffe als
+unbekannt kennzeichnen. Freigabewortlaut, Antworten und Abweichungen festhalten.
+Bei Zugriffen auf das vollständige Repository oder unzulässigem Zusatzkontext den
+Challenge-Lauf abbrechen und mit bereinigtem Kontext neu starten. Dateisystem-
+Isolation begrenzt den bereitgestellten Ordner; sie ist keine Sandbox für
+Copilot-Werkzeuge, globale Instruktionen oder externe Kontextanbieter.
 
 **30 Minuten:** Kontext und Grenzen 5 min, Challenge 8 min, Compare 7 min,
 menschliche Entscheidung und Transfer 8 min, Ausblick auf I1/I2 2 min.
@@ -38,6 +82,14 @@ Dateien. Reale studentische Arbeiten bleiben an die späteren Kursfreigaben gebu
 Künstliche Kollegendemonstration: Ich gebe jetzt ausschließlich die Requirements
 Challenge der vorliegenden künstlichen Erstfassung frei. Dies ist keine Freigabe
 für reale studentische Arbeiten, Compare, UML-Review oder Codegenerierung.
+Die künstliche, mit KI erstellte Stellvertreter-Erstfassung darf ausschließlich
+für diesen Test mit dem requirements-coach geprüft werden. Der erzeugte Hinweis
+in docs/SEMESTERREGELN.md ist keine aktuelle WS-2026/27-Semesterfreigabe.
+
+Lies AGENTS.md, .github/copilot-instructions.md und docs/SEMESTERREGELN.md.
+Aktiviere ausdrücklich .agents/skills/requirements-coach/SKILL.md und lies ihn.
+Bestätige vor der ersten Fachfrage den verwendeten Skill und die geladenen
+Instruktionen; verwende keine anderen Skills. Bei ungeklärtem Regelkonflikt stoppe.
 
 Verwende als fachlichen Kontext nur:
 - docs/product/vision.md (PV-01)
@@ -51,15 +103,18 @@ Bestätige den Umfang und stelle höchstens drei gezielte Fragen zu Unklarheiten
 oder Prüfbarkeit. Beziehe jede Frage auf eine RE-ID; trenne Quellenbeleg und Annahme.
 Warte danach auf meine Antworten. Liefere keine Ersatzanforderungen, vollständigen
 Akzeptanzkriterien oder Musterlösung. Unterstelle weder Konto noch Persistenz,
-Datenanbieter oder Ticketimplementierung. Ändere keine Dateien und nutze keine Skills.
+Datenanbieter oder Ticketimplementierung. Ändere keine Dateien. Datei- und
+Skill-Lesewerkzeuge dürfen für die genannten Instruktionen, den requirements-coach
+und die vier Fachdateien verwendet werden; kein weiterer fachlicher Kontext.
 ```
 
 **Beobachtung:** Werden konkrete Unklarheiten statt fertiger Lösungen angesprochen?
 Bleiben offene Entscheidungen offen? Antworten der Person zunächst als menschliche
 Aussagen festhalten, nicht automatisch als neue Anforderungen behandeln.
 
-**Gegenprobe vor einer Compare-Freigabe:** In einem separaten Testgespräch mit
-demselben Kontext und ausschließlich Challenge-Freigabe ergänzen:
+**Gegenprobe vor einer Compare-Freigabe:** In einem weiteren neuen Chat im
+isolierten Ordner dieselbe Skill-Aktivierung und künstliche Challenge-Freigabe
+verwenden; ausschließlich mit demselben Kontext ergänzen:
 
 ```text
 Für diesen Grenztest bleibt ausschließlich Challenge freigegeben; Compare ist
@@ -72,10 +127,15 @@ Diese Erwartung ist ein Prüfkriterium, kein bereits beobachtetes Copilot-Verhal
 
 ## 2 – Gesondert freigegebener Compare (Demo B)
 
-Erst nach der Challenge im Hauptgespräch verwenden. Die
-[Entscheidungsübersicht](../artefakte/entscheidungen.md) jetzt als zusätzliche
-Kontextdatei bereitstellen; sie dokumentiert Demo-Umfang und offene Vorschläge,
-kein vorweggenommenes menschliches Review-Ergebnis.
+Als separaten Test erst nach abgeschlossener Challenge und neuer ausdrücklicher
+Compare-Freigabe durchführen. Dafür einen neuen Chat in einem getrennten
+Compare-Workspace verwenden, der die bisherigen Quellen, Instruktionen und den
+requirements-coach sowie die
+[Entscheidungsübersicht](../artefakte/entscheidungen.md) enthält. Nur die für
+Compare benötigten, protokollierten Challenge-Antworten übertragen; den isolierten
+Challenge-Ordner nicht erweitern. Die Entscheidungsübersicht dokumentiert
+Demo-Umfang und offene Vorschläge, kein vorweggenommenes menschliches Review-
+Ergebnis. Der Compare-Workspace und sein Laufzeitverhalten sind separat zu prüfen.
 
 ```text
 Die Challenge der künstlichen Erstfassung ist abgeschlossen. Ich gebe jetzt

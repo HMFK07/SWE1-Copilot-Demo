@@ -24,5 +24,4 @@ werden hier nicht festgelegt. Der Kauf bleibt Teil des Quellkontexts, liegt jedo
 außerhalb der geplanten ersten Inkremente I1/I2.
 
 Challenge, Compare-Vorschlag und menschliche Revision werden getrennt von dieser
-Erstfassung behandelt. Siehe [Demoablauf](../demo/requirements.md) und
-[Entscheidungsübersicht](entscheidungen.md).
+Erstfassung behandelt.
