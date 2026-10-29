@@ -38,6 +38,12 @@ for name in sorted(SKILLS):
         continue
     lines = match.group(1).splitlines()
     fields = dict(line.split(":", 1) for line in lines if ":" in line)
+    # Gezielte Syntaxprüfung der einzeiligen Repo-Header, kein YAML-Parser:
+    # Ein Doppelpunkt mit folgendem Leerraum muss im Text quotiert sein.
+    for field, value in fields.items():
+        scalar = value.strip()
+        if not scalar.startswith(("\"", "'")) and re.search(r":(?:\s|$)", scalar):
+            issues.append(f"Ungültiger unquotierter YAML-Wert ({field}): {name}")
     if fields.get("name", "").strip() != name:
         issues.append(f"Name im Header entspricht nicht dem Verzeichnis: {name}")
     description = fields.get("description", "").strip()
