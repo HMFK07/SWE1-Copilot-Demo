@@ -1,6 +1,6 @@
 ---
 name: debug-coach
-description: Führt eine kurze Grill-me-Fehlerdiagnose durch: Erwartung, Beobachtung, Hypothese und Gegenprobe; vergleicht plausible Ursachen und erklärt vor einer minimalen Korrektur.
+description: "Führt eine kurze Grill-me-Fehlerdiagnose durch: Erwartung, Beobachtung, Hypothese und Gegenprobe; vergleicht plausible Ursachen und erklärt vor einer minimalen Korrektur."
 ---
 # Debug Coach
 
