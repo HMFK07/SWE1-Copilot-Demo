@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = {
-    "requirements-coach", "uml-review", "architecture-review",
+    "requirements-coach", "noun-extraction", "uml-review", "architecture-review",
     "implement-story", "test-coach", "debug-coach", "model-code-review",
 }
 REQUIRED = {

@@ -58,6 +58,8 @@ Der Agent darf Vorschläge nicht als genehmigte Requirements ausgeben und soll k
 
 Use-Case-, Objekt-, Klassen-, Aktivitäts-, Zustands- und Komponentendiagramme modellieren verschiedene Sichten. Ein `uml-review` prüft getrennt (a) Werkzeug-/PlantUML-Renderbarkeit, (b) UML-Notation und (c) fachliche Passung. Gerade Multiplizitäten, Kompositionen, Zustände, Entscheidungsknoten und Komponenteninterfaces laden zu Verständnisfragen ein. Grafische UML-Werkzeuge bleiben zugelassen, wo PlantUML eine unterrichtete Notation nicht angemessen abbildet.
 
+Vor dem ersten Modell kann `noun-extraction` nach ausdrücklicher Freigabe für die Modellierungsvorbereitung Substantive aus funktionalen Anforderungen, Stories und Use Cases mit Quellenbelegen sammeln. Die KI lässt die Einordnung offen; Studierende begründen selbst Klasse, Attribut, Komponente, konkrete Instanz oder Verwerfen/Unklarheit. Sprachliche Extraktion ist keine automatische Modellableitung: Beziehungen und Multiplizitäten fehlen, und Komponenten erfordern eine eigene Betrachtung von Verantwortlichkeiten und Schnittstellen. Für diesen Vorbereitungsschritt ist noch kein studentisches UML-Modell erforderlich; die Erstentwurfsregel für UML-Compare bleibt bestehen. Der neue Skill erteilt keine Semesterfreigabe.
+
 ### Wasserfall / V-Modell: Verifikation und Validierung
 
 Traditionelle Phasen (Anforderungen, System-/Komponentenentwurf, Implementierung, Test) strukturieren die **Arten der Entscheidungen**, ohne das Semester auf ein reines Wasserfallverfahren festzulegen. Die V-Modell-Perspektive koppelt Entwicklungsartefakte an Prüfaktivitäten:
@@ -84,6 +86,7 @@ Die Verbindung mit dem Challenge-Zyklus ist methodisch: Anforderungen werden **v
 | Skill | Lernziel – Studierende können … | Stufe | Lernnachweis |
 |---|---|---|---|
 | `requirements-coach` | Nutzerwert und Systemgrenze analysieren, Anforderungen vergleichen, eigene Stories/Use Cases begründet überarbeiten | 4–6 | Vorher-/Nachher-Stelle mit Begründung und ein prüfbares AC |
+| `noun-extraction` | Belegte Begriffe im Kontext als mögliche Modellelemente untersuchen und alternative Einordnungen begründen | 4–5 | Selbst ausgefüllte Begriffsliste mit Quellenbeleg, Begründung und einer verworfenen oder offenen Alternative |
 | `uml-review` | Beziehungen, Abläufe, Zustände oder Schnittstellen erklären und alternative Modellierung bewerten | 4–5 | Korrektur/Beibehaltung eines UML-Elements mit Gegenbeispiel |
 | `architecture-review` | Verantwortlichkeiten/Kopplung analysieren und einen Schnittstellenentscheid begründen | 4–5 | Kurze Entscheidung mit Qualitätsziel und Trade-off |
 | `implement-story` | relevante Methoden auf AK beziehen und Kontrollfluss/testbares Verhalten erklären | 3–4 | Zuordnung Story → Methode → Test und Peer-Erklärung |
@@ -91,7 +94,7 @@ Die Verbindung mit dem Challenge-Zyklus ist methodisch: Anforderungen werden **v
 | `debug-coach` | Fehler reproduzieren, Hypothesen gegenüberstellen und Gegenprobe interpretieren | 3–5 | Symptom → Hypothese → Beleg → Resultat |
 | `model-code-review` | Modell-/Codeunterschiede erkennen und fachliche Widersprüche von zulässigen Abstraktionen unterscheiden | 4–5 | begründete Entscheidung Modell/Code/beides/unverändert |
 
-**Erschaffen (6)** erfordert eine von Studierenden **selbst** verantwortete schöpferische Modell- oder Revisionsentscheidung. Ein generierter Referenzentwurf reicht nicht. Reflexionsfragen sind **in die sieben Skills integriert**, damit ein achter Meta-Skill nicht bloß Tokenkosten erhöht.
+**Erschaffen (6)** erfordert eine von Studierenden **selbst** verantwortete schöpferische Modell- oder Revisionsentscheidung. Ein generierter Referenzentwurf reicht nicht. Reflexionsfragen sind **in die acht fachlichen Skills integriert**; ein zusätzlicher Meta-Skill ist dafür nicht erforderlich.
 
 ## 5. Lernorientierte statt produktionsoptimierte Implementierung
 
