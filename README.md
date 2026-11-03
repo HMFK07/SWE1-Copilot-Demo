@@ -63,6 +63,7 @@ Die Stufen beziehen sich auf die revidierte **Bloom-Taxonomie nach Anderson und 
 | Skill | Wann? | Lernziel (Stufe) |
 |---|---|---|
 | [`requirements-coach`](.agents/skills/requirements-coach/SKILL.md) | Eigene Personas/Szenarien und später Stories/Use Cases hinterfragen | Nutzerziele und Annahmen analysieren, Kriterien bewerten und eigenständig überarbeiten (4–6) |
+| [`noun-extraction`](.agents/skills/noun-extraction/SKILL.md) | Substantive aus Anforderungen, Stories und Use Cases als Arbeitsliste sammeln | Begriffe selbst als Klassen-, Attribut-, Komponenten- oder Objektkandidaten untersuchen und begründet verwerfen oder weiterverfolgen (4–5) |
 | [`uml-review`](.agents/skills/uml-review/SKILL.md) | Ein **eigenes** UML-Modell verstehen und ggf. vergleichen | Modellierungsentscheidungen analysieren und begründen (4–5) |
 | [`architecture-review`](.agents/skills/architecture-review/SKILL.md) | Vorhandene Komponenten-/Architekturskizzen kritisch betrachten | Kopplung und Schnittstellen bewerten (4–5) |
 | [`implement-story`](.agents/skills/implement-story/SKILL.md) | Eine freigegebene, kleine Story ausdrücklich implementieren | Code erklären und Akzeptanzkriterien zuordnen (3–4) |
@@ -71,6 +72,21 @@ Die Stufen beziehen sich auf die revidierte **Bloom-Taxonomie nach Anderson und 
 | [`model-code-review`](.agents/skills/model-code-review/SKILL.md) | Nach Freigabe Modell gegen Code abgleichen | Bewusste Abstraktion und echte Widersprüche unterscheiden (4–5) |
 
 Sagt dem Agenten ausdrücklich, welchen Skill und Modus ihr verwenden wollt. Viele kompatible Umgebungen bieten Skill-Auswahl über das Chat-Menü oder `/` an; Details können sich ändern. **Skills werden nicht garantiert automatisch ausgewählt.**
+
+### Von Prosa zu ersten Modellkandidaten
+
+`noun-extraction` unterstützt nach ausdrücklicher Freigabe für diesen Vorbereitungsschritt den Einstieg **vor** dem ersten eigenen UML-Modell. Er sammelt Substantive mit Grundform, Fundstelle und Textbeleg. Ihr untersucht anschließend selbst, ob ein Begriff eine Klasse, ein Attribut, eine Komponente, eine konkrete Instanz oder kein Modellelement nahelegt. Die Wortliste ist noch kein Modell; Komponenten gehören zu einer anderen Sicht als fachliche Klassen.
+
+```text
+Nutze noun-extraction. Die Lehrperson hat die Substantivextraktion
+als Modellierungsvorbereitung für diese Quellen ausdrücklich freigegeben.
+Lies nur docs/requirements/, docs/user-stories/ und docs/use-cases/.
+Erstelle eine belegte Begriffsliste und lass Einordnung und Begründung offen.
+Wir untersuchen die Kandidaten selbst. Stelle danach höchstens drei
+Fragen und warte auf unsere Antworten. Erzeuge kein Diagramm.
+```
+
+Für einen künstlichen Probelauf siehe [Pilot-Szenario F](docs/lehrende/PILOT-SZENARIEN.md#szenario-f-substantivextraktion-vor-dem-ersten-modell). Ein späteres `uml-review` setzt euren eigenen Entwurf und die passende Review-Freigabe voraus.
 
 ## Code: Verständlichkeit vor technischer Perfektion
 
@@ -104,7 +120,7 @@ Tokenverbrauch hängt von Werkzeug und Modell ab. Nicht durch Weglassen wichtige
 
 ```text
 AGENTS.md                      globale, kurze Agent-Regeln
-.agents/skills/*/SKILL.md      7 spezifische Lern-Workflows
+.agents/skills/*/SKILL.md      8 spezifische Lern-Workflows
 docs/SEMESTERREGELN.md         Freigaben, vor Semesterstart festzulegen
 docs/scenarios/                eigene Personas, Ziele und Szenarien
 docs/user-stories/             eigene Stories und Akzeptanzkriterien
